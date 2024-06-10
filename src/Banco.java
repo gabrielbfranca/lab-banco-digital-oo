@@ -1,24 +1,14 @@
 import java.util.List;
+import java.util.ArrayList;
+import lombok.data;
 
-public class Banco {
+public @Data class Banco {
 
 	private String nome;
-	private List<Conta> contas;
+	private List<Conta> contas = new ArrayList<>();
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public List<Conta> getContas() {
-		return contas;
-	}
-
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
+	public void adicionarConta(Conta conta) {
+		this.contas.add(conta);
 	}
 
 }
