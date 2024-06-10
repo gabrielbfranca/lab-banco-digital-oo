@@ -1,5 +1,6 @@
+import lombok.Data;
 
-public abstract class Conta implements IConta {
+public abstract @Data class Conta implements IConta {
 	
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
@@ -42,18 +43,6 @@ public abstract class Conta implements IConta {
 			System.out.println("acesso permitido!");
 		}
 		
-	}
-
-	public int getAgencia() {
-		return agencia;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public double getSaldo() {
-		return saldo;
 	}
 
 	protected void imprimirInfosComuns() {
