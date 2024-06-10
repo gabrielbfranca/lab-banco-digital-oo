@@ -4,10 +4,12 @@ public abstract class Conta implements IConta {
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
 
+	protected Cliente cliente;
+	protected int senha;	
 	protected int agencia;
 	protected int numero;
 	protected double saldo;
-	protected Cliente cliente;
+	
 
 	public Conta(Cliente cliente) {
 		this.agencia = Conta.AGENCIA_PADRAO;
@@ -29,6 +31,17 @@ public abstract class Conta implements IConta {
 	public void transferir(double valor, IConta contaDestino) {
 		this.sacar(valor);
 		contaDestino.depositar(valor);
+	}
+
+	@Override
+	public void criar(Cliente cliente, int senha) {
+		if (cliente != this.cliente|| senha != this.senha ) {
+			System.out.println("Senha ou nome incorreto!");
+		} 
+		else {
+			System.out.println("acesso permitido!");
+		}
+		
 	}
 
 	public int getAgencia() {
