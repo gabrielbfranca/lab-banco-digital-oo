@@ -1,5 +1,7 @@
 
 public interface IConta {
+
+	void criar(Cliente nome, int senha );
 	
 	void sacar(double valor);
 	
